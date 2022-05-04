@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t0c-yM-vYQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XSZ-qw-RFS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,9 +17,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="S3W-vE-5VI">
-                                <rect key="frame" x="0.0" y="139" width="414" height="723"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRq-cN-8X8" customClass="Gradient" customModule="BolWeather" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" name="TopGradient"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" name="BottomGradient"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="S3W-vE-5VI">
+                                <rect key="frame" x="0.0" y="139" width="414" height="674"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Lwt-jt-0Tf">
                                 <rect key="frame" x="0.0" y="88" width="414" height="51"/>
@@ -31,8 +50,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S3W-vE-5VI" secondAttribute="trailing" id="3Sx-fZ-Tdt"/>
                             <constraint firstItem="Lwt-jt-0Tf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LUn-Jh-Vn8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lwt-jt-0Tf" secondAttribute="trailing" id="W5K-FY-RHZ"/>
+                            <constraint firstItem="TRq-cN-8X8" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="Yr1-JY-1Bv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="S3W-vE-5VI" secondAttribute="bottom" id="a0F-dB-quu"/>
+                            <constraint firstAttribute="top" secondItem="TRq-cN-8X8" secondAttribute="top" id="a9i-Bs-80M"/>
+                            <constraint firstItem="TRq-cN-8X8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="e1q-by-iKO"/>
                             <constraint firstItem="Lwt-jt-0Tf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eqx-Nn-ByT"/>
+                            <constraint firstAttribute="trailing" secondItem="TRq-cN-8X8" secondAttribute="trailing" id="oev-eJ-aLS"/>
                             <constraint firstItem="S3W-vE-5VI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tQl-m0-tfw"/>
                             <constraint firstItem="S3W-vE-5VI" firstAttribute="top" secondItem="Lwt-jt-0Tf" secondAttribute="bottom" id="uT1-CH-QER"/>
                         </constraints>
@@ -45,28 +68,135 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2859.4202898550725" y="79.6875"/>
+        </scene>
+        <!--Favorites View Controller-->
+        <scene sceneID="XA6-jA-AbO">
+            <objects>
+                <viewController id="jsl-kh-tpk" customClass="FavoritesViewController" customModule="BolWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WcT-fz-Lzt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dZI-Kk-aUB" customClass="Gradient" customModule="BolWeather" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4HX-Fc-1pW">
+                                        <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" name="TopGradient"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" name="BottomGradient"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bMC-zK-hlW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dZI-Kk-aUB" secondAttribute="trailing" id="6w1-rP-IBy"/>
+                            <constraint firstAttribute="top" secondItem="dZI-Kk-aUB" secondAttribute="top" id="9hw-BM-CHF"/>
+                            <constraint firstItem="4HX-Fc-1pW" firstAttribute="bottom" secondItem="bMC-zK-hlW" secondAttribute="bottom" id="D4z-zg-c1L"/>
+                            <constraint firstItem="dZI-Kk-aUB" firstAttribute="bottom" secondItem="WcT-fz-Lzt" secondAttribute="bottom" id="H2V-3E-Buk"/>
+                            <constraint firstItem="dZI-Kk-aUB" firstAttribute="leading" secondItem="WcT-fz-Lzt" secondAttribute="leading" id="OZX-1E-AeC"/>
+                            <constraint firstItem="bMC-zK-hlW" firstAttribute="trailing" secondItem="4HX-Fc-1pW" secondAttribute="trailing" id="UJh-yJ-O8J"/>
+                            <constraint firstItem="4HX-Fc-1pW" firstAttribute="leading" secondItem="bMC-zK-hlW" secondAttribute="leading" id="jzp-w4-B3h"/>
+                            <constraint firstItem="bMC-zK-hlW" firstAttribute="top" secondItem="4HX-Fc-1pW" secondAttribute="top" id="vlt-Oi-Vi1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="HvU-hz-eMV"/>
+                    <connections>
+                        <outlet property="tableView" destination="4HX-Fc-1pW" id="p4v-Eg-oaf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rW9-gi-ihw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2857.971014492754" y="857.8125"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Ndm-5s-OvS">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="XSZ-qw-RFS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xkr-hB-bFe">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="NRm-1H-Mfc" kind="relationship" relationship="viewControllers" id="PCX-N5-hDC"/>
+                        <segue destination="XAy-ch-f4W" kind="relationship" relationship="viewControllers" id="vvc-A6-fbE"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GpM-k5-zh9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="1039.1304347826087" y="79.6875"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="tdm-hW-rSv">
+        <!--Inicio-->
+        <scene sceneID="FEe-Ds-DUY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t0c-yM-vYQ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NRm-1H-Mfc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Inicio" image="home" selectedImage="home-selecteed" id="OiJ-nB-MhA"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GEU-Sv-gaI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="34B-PD-Pbu">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="kYz-hN-Orj"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="BsO-jj-Aha"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="t7a-7v-5th" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ogn-DW-dHp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="128.98550724637681" y="79.6875"/>
+            <point key="canvasLocation" x="1949.2753623188407" y="79.6875"/>
+        </scene>
+        <!--Favoritos-->
+        <scene sceneID="a5W-dm-osv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XAy-ch-f4W" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favoritos" image="favorites" selectedImage="favorites-selected" id="lg2-VT-4MS"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gus-k7-LjG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jsl-kh-tpk" kind="relationship" relationship="rootViewController" id="6df-8M-cWb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vom-Yu-E2v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1947.826086956522" y="857.8125"/>
         </scene>
     </scenes>
     <resources>
+        <image name="favorites" width="25" height="25"/>
+        <image name="favorites-selected" width="25" height="25"/>
+        <image name="home" width="25" height="25"/>
+        <image name="home-selecteed" width="25" height="25"/>
+        <namedColor name="BottomGradient">
+            <color red="0.48600000143051147" green="0.37999999523162842" blue="0.95300000905990601" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TopGradient">
+            <color red="0.46700000762939453" green="0.72500002384185791" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -8,9 +8,10 @@
 import UIKit
 
 extension UITableViewCell{
-    func addShadow(background: UIColor = Colors.blackWhite.color, corners: CGFloat = 10){
+    func addShadow(background: UIColor = .white.withAlphaComponent(0.8), corners: CGFloat = 10, alpha: Double = 1.0){
         let backView = UIView()
         backView.tag = 999999
+        backView.alpha = alpha
         backView.isUserInteractionEnabled = false
         backView.backgroundColor = background
         backView.translatesAutoresizingMaskIntoConstraints = false

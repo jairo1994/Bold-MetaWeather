@@ -34,6 +34,13 @@
 		8B807BC8282210EC00511FFD /* SourceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B807BC6282210EC00511FFD /* SourceTableViewCell.xib */; };
 		8B807BCA2822122300511FFD /* TopInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B807BC92822122300511FFD /* TopInfoView.swift */; };
 		8B807BCC2822122F00511FFD /* TopInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B807BCB2822122F00511FFD /* TopInfoView.xib */; };
+		8B86DDE22822FBE70036B57D /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B86DDE12822FBE70036B57D /* Protocols.swift */; };
+		8B86DDE92822FD0D0036B57D /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B86DDE72822FD0D0036B57D /* FavoritesViewController.swift */; };
+		8B86DDF22822FE440036B57D /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B86DDF12822FE440036B57D /* FavoriteViewModel.swift */; };
+		8B86DDF5282312F30036B57D /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B86DDF4282312F30036B57D /* Messages.swift */; };
+		8B885BE52822DB9900FB8699 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B885BE42822DB9900FB8699 /* GradientView.swift */; };
+		8B885BE92822F32500FB8699 /* Favorites.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B885BE72822F32500FB8699 /* Favorites.xcdatamodeld */; };
+		8B885BEB2822F38B00FB8699 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B885BEA2822F38B00FB8699 /* DataManager.swift */; };
 		8BE75B2E2821E671008DF895 /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE75B2D2821E671008DF895 /* RequestService.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +75,13 @@
 		8B807BC6282210EC00511FFD /* SourceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SourceTableViewCell.xib; sourceTree = "<group>"; };
 		8B807BC92822122300511FFD /* TopInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopInfoView.swift; sourceTree = "<group>"; };
 		8B807BCB2822122F00511FFD /* TopInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopInfoView.xib; sourceTree = "<group>"; };
+		8B86DDE12822FBE70036B57D /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		8B86DDE72822FD0D0036B57D /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		8B86DDF12822FE440036B57D /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		8B86DDF4282312F30036B57D /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		8B885BE42822DB9900FB8699 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		8B885BE82822F32500FB8699 /* Favorites.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Favorites.xcdatamodel; sourceTree = "<group>"; };
+		8B885BEA2822F38B00FB8699 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		8BE75B2D2821E671008DF895 /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
 		B78CBEE03D011D693F2B0393 /* Pods-BolWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BolWeather.release.xcconfig"; path = "Target Support Files/Pods-BolWeather/Pods-BolWeather.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,9 +136,10 @@
 		8B072B6F2821E47600515A38 /* BolWeather */ = {
 			isa = PBXGroup;
 			children = (
+				8B86DDF3282312E90036B57D /* Utils */,
+				8B86DDE32822FCE40036B57D /* Modules */,
+				8B885BE62822F30F00FB8699 /* CoreData */,
 				8B0851772821F5450035D3FD /* Extensions */,
-				8B4E5F5D2821F8F300CB7265 /* List home  */,
-				8B4E5F5E2821F8FF00CB7265 /* Detail VC */,
 				8BE75B2C2821E65D008DF895 /* Services */,
 				8B072B702821E47600515A38 /* AppDelegate.swift */,
 				8B072B722821E47600515A38 /* SceneDelegate.swift */,
@@ -132,6 +147,7 @@
 				8B072B7B2821E47700515A38 /* LaunchScreen.storyboard */,
 				8B072B7E2821E47700515A38 /* Info.plist */,
 				8B08517E2821F6490035D3FD /* Assets */,
+				8B86DDE12822FBE70036B57D /* Protocols.swift */,
 			);
 			path = BolWeather;
 			sourceTree = "<group>";
@@ -168,6 +184,7 @@
 				8B807BC3282208BD00511FFD /* DateHelper.swift */,
 				8B0851752821F5320035D3FD /* UITableViewCell+Extension.swift */,
 				8B0851782821F5760035D3FD /* UIView+Extension.swift */,
+				8B885BE42822DB9900FB8699 /* GradientView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -231,6 +248,58 @@
 				8B4E5F682821FACC00CB7265 /* DetailModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8B86DDE32822FCE40036B57D /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				8B86DDE42822FCEC0036B57D /* Favorites */,
+				8B4E5F5D2821F8F300CB7265 /* List home  */,
+				8B4E5F5E2821F8FF00CB7265 /* Detail VC */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		8B86DDE42822FCEC0036B57D /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				8B86DDF02822FE360036B57D /* ViewModel */,
+				8B86DDEB2822FDCC0036B57D /* View */,
+				8B86DDE72822FD0D0036B57D /* FavoritesViewController.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		8B86DDEB2822FDCC0036B57D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8B86DDF02822FE360036B57D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8B86DDF12822FE440036B57D /* FavoriteViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8B86DDF3282312E90036B57D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8B86DDF4282312F30036B57D /* Messages.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8B885BE62822F30F00FB8699 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				8B885BE72822F32500FB8699 /* Favorites.xcdatamodeld */,
+				8B885BEA2822F38B00FB8699 /* DataManager.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		8BE75B2C2821E65D008DF895 /* Services */ = {
@@ -363,15 +432,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B885BE52822DB9900FB8699 /* GradientView.swift in Sources */,
+				8B86DDE22822FBE70036B57D /* Protocols.swift in Sources */,
 				8B072B752821E47600515A38 /* ViewController.swift in Sources */,
 				8B08517D2821F63F0035D3FD /* Colors.swift in Sources */,
 				8BE75B2E2821E671008DF895 /* RequestService.swift in Sources */,
 				8B807BC7282210EC00511FFD /* SourceTableViewCell.swift in Sources */,
 				8B4E5F612821F92600CB7265 /* DetailViewController.swift in Sources */,
+				8B86DDF5282312F30036B57D /* Messages.swift in Sources */,
 				8B807BC12822074000511FFD /* DayInfoTableViewCell.swift in Sources */,
+				8B86DDF22822FE440036B57D /* FavoriteViewModel.swift in Sources */,
 				8B0851792821F5760035D3FD /* UIView+Extension.swift in Sources */,
 				8B0851732821EFB00035D3FD /* LocationTableViewCell.swift in Sources */,
+				8B86DDE92822FD0D0036B57D /* FavoritesViewController.swift in Sources */,
 				8B072B712821E47600515A38 /* AppDelegate.swift in Sources */,
+				8B885BEB2822F38B00FB8699 /* DataManager.swift in Sources */,
 				8B0851762821F5320035D3FD /* UITableViewCell+Extension.swift in Sources */,
 				8B807BC4282208BD00511FFD /* DateHelper.swift in Sources */,
 				8B0851692821E8520035D3FD /* LookForService.swift in Sources */,
@@ -379,6 +454,7 @@
 				8B4E5F662821F97100CB7265 /* DetailViewModel.swift in Sources */,
 				8B807BCA2822122300511FFD /* TopInfoView.swift in Sources */,
 				8B08516F2821EB220035D3FD /* LocationViewModel.swift in Sources */,
+				8B885BE92822F32500FB8699 /* Favorites.xcdatamodeld in Sources */,
 				8B08516C2821E8BD0035D3FD /* LocationModel.swift in Sources */,
 				8B072B732821E47600515A38 /* SceneDelegate.swift in Sources */,
 			);
@@ -602,6 +678,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8B885BE72822F32500FB8699 /* Favorites.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8B885BE82822F32500FB8699 /* Favorites.xcdatamodel */,
+			);
+			currentVersion = 8B885BE82822F32500FB8699 /* Favorites.xcdatamodel */;
+			path = Favorites.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8B072B652821E47600515A38 /* Project object */;
 }

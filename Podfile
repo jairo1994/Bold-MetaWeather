@@ -7,5 +7,6 @@ target 'BolWeather' do
 
   # Pods for BolWeather
   pod 'Alamofire'
-  pod 'Kingfisher', '~> 7.0'
+  pod 'Kingfisher', '~> 7.0' 
+  pod 'SwiftMessages'
 end
